@@ -1,7 +1,7 @@
 
 ### If you are trying to organize a Coding Dojo
 
-![Example request for your company](https://github.com/franferri/codingdojos-katas/blob/master/Example%20request%20for%20your%20company.md)
+https://github.com/franferri/codingdojos-katas/blob/master/Example%20request%20for%20your%20company.md
 
 ### If is your your first time
 
