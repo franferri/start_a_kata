@@ -16,7 +16,7 @@ To clone this repository:
     $ git clone https://github.com/franferri/codingdojos-katas.git
 
 #### Running the example
-    $ cd katainception-java
+    $ cd start-kata-project
     $ mvn clean test
 
 **Creating your first test**

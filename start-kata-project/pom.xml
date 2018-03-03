@@ -4,7 +4,7 @@
 	<packaging>jar</packaging>
 
 	<groupId>codingdojos-katas</groupId>
-	<artifactId>kata-example-java</artifactId>
+	<artifactId>start-kata-project</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
 	<properties>
