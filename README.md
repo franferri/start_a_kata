@@ -1,7 +1,7 @@
 
 ### If you are trying to organize a Coding Dojo
 
-Example of request for your company.md
+![Example request for your company](https://github.com/franferri/codingdojos-katas/blob/master/Example%20of%20request%20for%20your%20company.md)
 
 ### If is your your first time
 
@@ -21,7 +21,7 @@ To clone this repository:
 
 **Creating your first test**
 
-![Test in 5 steps](https://github.com/franferri/codingdojo-katas/blob/master/images/test_in_5_steps.jpg)
+![Test in 5 steps](https://github.com/franferri/codingdojos-katas/blob/master/images/test_in_5_steps.jpg)
 
 Suggested reading: https://codurance.com/2014/12/13/naming-test-classes-and-methods/
 
@@ -34,7 +34,7 @@ Suggested reading: https://codurance.com/2014/12/13/naming-test-classes-and-meth
   * Green - Write enough code to make the test pass
   * Refactor - Clean up your code and your tests (don't forget that your tests are code too)
 
-![Red Green Refactor](https://github.com/franferri/codingdojo-katas/blob/master/images/red_green_refactor.jpg)
+![Red Green Refactor](https://github.com/franferri/codingdojos-katas/blob/master/images/red_green_refactor.jpg)
 
 Suggested reading: http://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html
 
