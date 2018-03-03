@@ -31,7 +31,7 @@ https://www.meetup.com/es-ES/Dublin-Software-Crafters/events/245045253/
 
 And the final goal is to practice design patterns and share different paradigms. Actually, there is no aim of finishing the kata.
 
-The ideal scope of the event has to be [YOUR COMPANY OR DEPARTMENT HERE]] wide, it will be more enriching experience since the sharing will happen between unknown partners, people that don't work together in the daily basis.
+The ideal scope of the event has to be [YOUR COMPANY OR DEPARTMENT HERE] wide, it will be more enriching experience since the sharing will happen between unknown partners, people that don't work together in the daily basis.
 
 Of course, none of the code, technology or information will be related with [YOUR COMPANY NAME HERE] toolset or code.
 
