@@ -1,6 +1,5 @@
 package rpg.attacks;
 
-import rpg.Attack;
 import rpg.GameData;
 
 public class NoHealingThroughDamage extends Attack {

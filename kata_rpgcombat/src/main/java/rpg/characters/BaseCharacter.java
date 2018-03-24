@@ -1,15 +1,19 @@
-package rpg;
+package rpg.characters;
 
-public class Character {
+import rpg.ChainOfAttacks;
+import rpg.GameData;
+
+public class BaseCharacter {
 
     private static final int MAX_HEALTH = 1000;
     private static final int DEAD = 0;
     private int health = MAX_HEALTH;
     private int level = 1;
+    protected int range;
 
-    public Character() {}
+    public BaseCharacter() {}
 
-    public Character(int level) {
+    public BaseCharacter(int level) {
         this.level = level;
     }
 
@@ -43,9 +47,17 @@ public class Character {
         return health <= DEAD;
     }
 
-    public void attack(int damage, Character enemy) {
+    public void attack(int damage, BaseCharacter enemy) {
         GameData attack = new GameData(this, enemy, damage);
         ChainOfAttacks.attack(attack);
+    }
+
+    public int range() {
+        return range;
+    }
+
+    public void setRange(int range) {
+        this.range = range;
     }
 
 }

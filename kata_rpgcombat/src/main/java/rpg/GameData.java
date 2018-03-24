@@ -1,12 +1,14 @@
 package rpg;
 
+import rpg.characters.BaseCharacter;
+
 public class GameData {
 
-    private Character player;
-    private Character enemy;
+    private BaseCharacter player;
+    private BaseCharacter enemy;
     private int damage;
 
-    public GameData(Character player, Character enemy, int damage) {
+    public GameData(BaseCharacter player, BaseCharacter enemy, int damage) {
         this.player = player;
         this.enemy = enemy;
         this.damage = damage;
@@ -16,11 +18,11 @@ public class GameData {
         return damage;
     }
 
-    public Character enemy() {
+    public BaseCharacter enemy() {
         return enemy;
     }
 
-    public Character player() {
+    public BaseCharacter player() {
         return player;
     }
 

@@ -1,9 +1,8 @@
 package rpg.attacks;
 
-import rpg.Attack;
 import rpg.GameData;
 
-public class ReceiveDamage extends Attack {
+public class ApplyDamage extends Attack {
 
     @Override
     protected void attack(GameData gameData) {
