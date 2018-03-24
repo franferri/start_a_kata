@@ -4,7 +4,7 @@
     <packaging>jar</packaging>
 
     <groupId>codingdojos-katas</groupId>
-    <artifactId>kata-marsrover</artifactId>
+    <artifactId>kata-rpg-combat</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <properties>

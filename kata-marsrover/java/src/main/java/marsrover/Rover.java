@@ -53,9 +53,7 @@ public class Rover {
         functionsMapper.put("Backwards", () -> backwards());
 
         for (String command : commands) {
-
             functionsMapper.get(command).run();
-
         }
 
     }

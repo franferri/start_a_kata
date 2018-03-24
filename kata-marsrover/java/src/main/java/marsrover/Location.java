@@ -19,23 +19,22 @@ public class Location {
 
     }
 
-    public void incrementX(){
-        this.x = ++x;
+    public void incrementX() {
+        ++x;
     }
 
-    public void decrementX(){
-        this.x = --x;
+    public void decrementX() {
+        --x;
     }
 
-
-    public void incrementY(){
-        this.y = ++y;
+    public void incrementY() {
+        ++y;
 
     }
-    public void decrementY(){
-        this.y = --y;
-    }
 
+    public void decrementY() {
+        --y;
+    }
 
     public int getX() {
         return x;
