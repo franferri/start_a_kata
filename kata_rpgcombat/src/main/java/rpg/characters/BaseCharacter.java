@@ -2,6 +2,7 @@ package rpg.characters;
 
 import rpg.ChainOfAttacks;
 import rpg.GameData;
+import rpg.attacks.Attack;
 
 public class BaseCharacter {
 
@@ -48,8 +49,12 @@ public class BaseCharacter {
     }
 
     public void attack(int damage, BaseCharacter enemy) {
-        GameData attack = new GameData(this, enemy, damage);
-        ChainOfAttacks.attack(attack);
+
+        GameData gameData = new GameData(this, enemy, damage);
+
+        Attack attackChain = ChainOfAttacks.getChainOfAttacks();
+        attackChain.execute(gameData);
+
     }
 
     public int range() {

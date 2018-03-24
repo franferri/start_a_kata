@@ -10,7 +10,7 @@ import rpg.characters.RangeFighter;
 
 public class RPGCombatKata {
 
-    // Iteration One
+    // Iteration One ##########################################
 
     @Test
     public void BaseCharacterDiesOverCriticalHit() {
@@ -64,7 +64,7 @@ public class RPGCombatKata {
         assertEquals(900, enemy.health());
     }
 
-    // Iteration Two
+    // Iteration Two ##########################################
 
     @Test
     public void BaseCharacterCannotAttackHimself() {
@@ -100,7 +100,8 @@ public class RPGCombatKata {
         assertEquals(250, enemy.health());
     }
 
-    // Iteration Three
+    // Iteration Three ##########################################
+
     @Test
     public void attackRangeOfMeleeFighters() {
         BaseCharacter player = new MeleeFighter();

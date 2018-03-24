@@ -1,5 +1,8 @@
 package rpg;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import rpg.attacks.ApplyBoostedDamage;
 import rpg.attacks.ApplyDamage;
 import rpg.attacks.ApplyReducedDamage;
@@ -11,32 +14,26 @@ import rpg.attacks.RangeFighterAttackOutOfRange;
 
 public class ChainOfAttacks {
 
-    public static void attack(GameData gameData) {
+    public static Attack getChainOfAttacks() {
 
-        Attack attackChain = getChainOfAttacks();
-        attackChain.execute(gameData);
+        List<Attack> attacks = new ArrayList<>();
+        attacks.add(new AvoidSelfDamaging());
+        attacks.add(new NoHealingThroughDamage());
+        attacks.add(new MeleeFighterAttackOutOfRange());
+        attacks.add(new RangeFighterAttackOutOfRange());
+        attacks.add(new ApplyReducedDamage());
+        attacks.add(new ApplyBoostedDamage());
+        attacks.add(new ApplyDamage());
+
+        return createChain(attacks);
 
     }
 
-    private static Attack getChainOfAttacks() {
-
-        Attack attack1 = new AvoidSelfDamaging();
-        Attack attack2 = new NoHealingThroughDamage();
-        Attack attack3 = new MeleeFighterAttackOutOfRange();
-        Attack attack4 = new RangeFighterAttackOutOfRange();
-        Attack attack5 = new ApplyReducedDamage();
-        Attack attack6 = new ApplyBoostedDamage();
-        Attack attack7 = new ApplyDamage();
-
-        attack1.setNextLogger(attack2);
-        attack2.setNextLogger(attack3);
-        attack3.setNextLogger(attack4);
-        attack4.setNextLogger(attack5);
-        attack5.setNextLogger(attack6);
-        attack6.setNextLogger(attack7);
-
-        return attack1;
-
+    private static Attack createChain(List<Attack> attacks) {
+        for (int i = 1; i < attacks.size(); i++) {
+            attacks.get(i - 1).setNextLogger(attacks.get(i));
+        }
+        return attacks.get(0);
     }
 
 }
