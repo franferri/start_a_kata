@@ -17,6 +17,9 @@ public class GameData {
     public int damage() {
         return damage;
     }
+    public void changeDamage(int newDamage) {
+    		this.damage = newDamage;
+    }
 
     public BaseCharacter enemy() {
         return enemy;

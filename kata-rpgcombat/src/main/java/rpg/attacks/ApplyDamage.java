@@ -1,13 +1,13 @@
 package rpg.attacks;
 
 import rpg.GameData;
+import rpg.attacks.chain.Attack;
 
-public class ApplyDamage extends Attack {
+public class ApplyDamage implements Attack {
 
-    @Override
-    protected void attack(GameData gameData) {
+	@Override
+	public void attack(GameData gameData) {
         gameData.enemy().receiveDamage(gameData.damage());
-        abortChain();
-    }
+	}
 
 }

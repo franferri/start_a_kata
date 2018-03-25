@@ -1,14 +1,25 @@
 package rpg.attacks;
 
 import rpg.GameData;
+import rpg.attacks.chain.Attack;
+import rpg.attacks.chain.LinkableAttack;
 
-public class NoHealingThroughDamage extends Attack {
+public class NoHealingThroughDamage implements LinkableAttack {
 
-    @Override
-    protected void attack(GameData gameData) {
+	private Attack next;
+
+	@Override
+	public void nextLink(Attack next) {
+		this.next = next;		
+	}
+    
+	@Override
+    public void attack(GameData gameData) {
         if (gameData.damage() <= 0) {
-            abortChain();
+           return;
         }
+        
+        this.next.attack(gameData);
     }
 
 }
