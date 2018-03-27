@@ -11,13 +11,18 @@ If you don't know how to start you may want download from this repo, it contains
 Import it in your IDE or from the console, so you can check your gear before we start.
 Do this in advance of the event to save time.
 
-To clone this repository:
+Clone this repository:
 
     $ git clone https://github.com/franferri/codingdojos-katas.git
 
-#### Running the example
+#### If you have java and maven - run the example
     $ cd start-kata-project
     $ mvn clean test
+
+#### If you hava java but don't have maven installed use the example with maven buildin
+
+    $ cd start-kata-project-builtin-maven
+    $ ./mvnw clean test
 
 **Creating your first test**
 
