@@ -1,8 +1,7 @@
 package rpg.characters;
 
-import rpg.ChainOfAttacks;
 import rpg.GameData;
-import rpg.attacks.Attack;
+import rpg.attacks.chain.ChainOfAttacks;
 
 public class BaseCharacter {
 
@@ -52,7 +51,8 @@ public class BaseCharacter {
 
         GameData gameData = new GameData(this, enemy, damage);
 
-        Attack attackChain = ChainOfAttacks.getChainOfAttacks();
+        ChainOfAttacks attackChain = new ChainOfAttacks();
+        
         attackChain.execute(gameData);
 
     }

@@ -1,15 +1,25 @@
 package rpg.attacks;
 
 import rpg.GameData;
+import rpg.attacks.chain.Attack;
+import rpg.attacks.chain.LinkableAttack;
 
-public class ApplyReducedDamage extends Attack {
+public class ApplyReducedDamage implements LinkableAttack {
 
-    @Override
-    protected void attack(GameData gameData) {
+	private Attack next;
+	
+	@Override
+	public void nextLink(Attack next) {
+		this.next = next;		
+	}
+    
+	@Override
+    public void attack(GameData gameData) {
         if (gameData.enemy().level() - gameData.player().level() >= 5) {
-            gameData.enemy().receiveDamage(gameData.damage() / 2);
-            abortChain();
+            gameData.changeDamage(gameData.damage() / 2);
         }
+        
+        this.next.attack(gameData);
     }
 
 }
