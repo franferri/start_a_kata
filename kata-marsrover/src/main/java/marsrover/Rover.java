@@ -1,61 +1,38 @@
 package marsrover;
 
 import java.util.HashMap;
-import java.util.List;
+
+import marsrover.navigation.Direction;
+import marsrover.navigation.Location;
+import marsrover.navigation.Position;
 
 public class Rover {
 
-    private Location location;
-    private Direction direction;
+	Position position;
 
+	private HashMap<String, Runnable> functionsMapper = new HashMap<>();
 
-    public Rover(Location location, Direction direction) {
+	public Rover(int x, int y, Direction direction) {
 
-        this.location = location;
-        this.direction = direction;
+		this.position = new Position(new Location(x, y), direction);
 
-    }
+		functionsMapper.put("Forward", () -> position.forward());
+		functionsMapper.put("Left", () -> position.turnLeft());
+		functionsMapper.put("Right", () -> position.turnRight());
+		functionsMapper.put("Backwards", () -> position.backwards());
 
-    public void forward() {
-        location = direction.forward(location);
-    }
+	}
 
-    public void backwards() {
-        location = direction.backwards(location);
-    }
+	public void move(String[] commands) {
 
+		for (String command : commands) {
+			if (position.isObstacle()) {
+				System.out.println("Obstacle in the next movement, aborting before hit it, current location: " + position.toString());
+				break;
+			}
+			functionsMapper.get(command).run();
+		}
 
-    public void turnRight() {
-        direction = direction.turnRight();
-    }
-
-    public void turnLeft() {
-        direction = direction.turnLeft();
-    }
-
-
-    public Location whereAreYou() {
-        return location;
-    }
-
-    public Direction whereAreYouFacing() {
-        return direction;
-    }
-
-
-    public void move(List<String> commands) {
-
-        HashMap<String, Runnable> functionsMapper = new HashMap<>();
-
-        functionsMapper.put("Forward", () -> forward());
-        functionsMapper.put("Left", () -> turnLeft());
-        functionsMapper.put("Right", () -> turnRight());
-        functionsMapper.put("Backwards", () -> backwards());
-
-        for (String command : commands) {
-            functionsMapper.get(command).run();
-        }
-
-    }
+	}
 
 }

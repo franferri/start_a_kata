@@ -1,230 +1,364 @@
 package marsrover;
 
-import org.junit.Assert;
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.List;
+import marsrover.navigation.East;
+import marsrover.navigation.Location;
+import marsrover.navigation.North;
+import marsrover.navigation.South;
+import marsrover.navigation.West;
 
 public class RoverShould {
 
-    @Test
-    public void moveForwardEast() {
+	@Test
+	public void moveForwardEast() {
 
-        Rover rover = new Rover(new Location(0, 0), new DirectionEast());
-        rover.forward();
+		Rover rover = new Rover(0, 0, new East());
 
-        Location location = rover.whereAreYou();
-        Assert.assertEquals(1, location.getX());
-        Assert.assertEquals(0, location.getY());
+		rover.move(new String[] { "Forward" });
 
-    }
+		assertEquals("1,0,East", rover.position.toString());
 
-    @Test
-    public void moveForwardWest() {
+	}
 
+	@Test
+	public void moveForwardWest() {
 
-        Rover rover = new Rover(new Location(0, 0), new DirectionWest());
-        rover.forward();
+		Rover rover = new Rover(0, 0, new West());
 
-        Location location = rover.whereAreYou();
-        Assert.assertEquals(-1, location.getX());
-        Assert.assertEquals(0, location.getY());
+		rover.move(new String[] { "Forward" });
 
-    }
+		assertEquals("-1,0,West", rover.position.toString());
 
-    @Test
-    public void moveForwarNorth() {
+	}
 
-        Rover rover = new Rover(new Location(0, 0), new DirectionNorth());
-        rover.forward();
+	@Test
+	public void moveForwardNorth() {
 
-        Location location = rover.whereAreYou();
-        Assert.assertEquals(0, location.getX());
-        Assert.assertEquals(1, location.getY());
+		Rover rover = new Rover(0, 0, new North());
 
-    }
+		rover.move(new String[] { "Forward" });
 
-    @Test
-    public void moveForwardSouth() {
+		assertEquals("0,1,North", rover.position.toString());
 
-        Rover rover = new Rover(new Location(0, 0), new DirectionSouth());
-        rover.forward();
+	}
 
-        Location location = rover.whereAreYou();
-        Assert.assertEquals(0, location.getX());
-        Assert.assertEquals(-1, location.getY());
+	@Test
+	public void moveForwardSouth() {
 
-    }
+		Rover rover = new Rover(0, 0, new South());
 
+		rover.move(new String[] { "Forward" });
 
-    @Test
-    public void moveBackwardsEast() {
+		assertEquals("0,-1,South", rover.position.toString());
 
-        Rover rover = new Rover(new Location(0, 0), new DirectionEast());
-        rover.backwards();
+	}
 
-        Location location = rover.whereAreYou();
-        Assert.assertEquals(-1, location.getX());
-        Assert.assertEquals(0, location.getY());
+	@Test
+	public void moveBackwardsEast() {
 
-    }
+		Rover rover = new Rover(0, 0, new East());
 
-    @Test
-    public void moveBackwardsdWest() {
+		rover.move(new String[] { "Backwards" });
 
+		assertEquals("-1,0,East", rover.position.toString());
 
-        Rover rover = new Rover(new Location(0, 0), new DirectionWest());
-        rover.backwards();
+	}
 
-        Location location = rover.whereAreYou();
-        Assert.assertEquals(1, location.getX());
-        Assert.assertEquals(0, location.getY());
+	@Test
+	public void moveBackwardsdWest() {
 
-    }
+		Rover rover = new Rover(0, 0, new West());
 
-    @Test
-    public void moveBackwardsNorth() {
+		rover.move(new String[] { "Backwards" });
 
-        Rover rover = new Rover(new Location(0, 0), new DirectionNorth());
-        rover.backwards();
+		assertEquals("1,0,West", rover.position.toString());
 
-        Location location = rover.whereAreYou();
-        Assert.assertEquals(0, location.getX());
-        Assert.assertEquals(-1, location.getY());
+	}
 
-    }
+	@Test
+	public void moveBackwardsNorth() {
 
-    @Test
-    public void moveBackwardsSouth() {
+		Rover rover = new Rover(0, 0, new North());
 
-        Rover rover = new Rover(new Location(0, 0), new DirectionSouth());
-        rover.backwards();
+		rover.move(new String[] { "Backwards" });
 
-        Location location = rover.whereAreYou();
-        Assert.assertEquals(0, location.getX());
-        Assert.assertEquals(1, location.getY());
+		assertEquals("0,-1,North", rover.position.toString());
 
-    }
+	}
 
+	@Test
+	public void moveBackwardsSouth() {
 
-    @Test
-    public void moveTurnRightFromNorth() {
+		Rover rover = new Rover(0, 0, new South());
 
-        Rover rover = new Rover(null, new DirectionNorth());
-        rover.turnRight();
+		rover.move(new String[] { "Backwards" });
 
-        Direction direction = rover.whereAreYouFacing();
-        Assert.assertEquals(new DirectionEast().getClass().getSimpleName(), direction.getClass().getSimpleName());
+		assertEquals("0,1,South", rover.position.toString());
 
-    }
+	}
 
-    @Test
-    public void moveTurnRightFromEast() {
+	@Test
+	public void moveTurnRightFromNorth() {
 
-        Rover rover = new Rover(null, new DirectionEast());
-        rover.turnRight();
+		Rover rover = new Rover(0, 0, new North());
 
-        Direction direction = rover.whereAreYouFacing();
-        Assert.assertEquals(new DirectionSouth().getClass().getSimpleName(), direction.getClass().getSimpleName());
+		rover.move(new String[] { "Right" });
 
-    }
+		assertEquals("0,0,East", rover.position.toString());
 
-    @Test
-    public void moveTurnRightFromWest() {
+	}
 
-        Rover rover = new Rover(null, new DirectionWest());
-        rover.turnRight();
+	@Test
+	public void moveTurnRightFromEast() {
 
-        Direction direction = rover.whereAreYouFacing();
-        Assert.assertEquals(new DirectionNorth().getClass().getSimpleName(), direction.getClass().getSimpleName());
+		Rover rover = new Rover(0, 0, new East());
 
-    }
+		rover.move(new String[] { "Right" });
 
-    @Test
-    public void moveTurnRightFromSouth() {
+		assertEquals("0,0,South", rover.position.toString());
 
-        Rover rover = new Rover(null, new DirectionSouth());
-        rover.turnRight();
+	}
 
-        Direction direction = rover.whereAreYouFacing();
-        Assert.assertEquals(new DirectionWest().getClass().getSimpleName(), direction.getClass().getSimpleName());
+	@Test
+	public void moveTurnRightFromWest() {
 
-    }
+		Rover rover = new Rover(0, 0, new West());
 
+		rover.move(new String[] { "Right" });
 
-    @Test
-    public void moveTurnLeftFromNorth() {
+		assertEquals("0,0,North", rover.position.toString());
 
-        Rover rover = new Rover(null, new DirectionNorth());
-        rover.turnLeft();
+	}
 
-        Direction direction = rover.whereAreYouFacing();
-        Assert.assertEquals(new DirectionWest().getClass().getSimpleName(), direction.getClass().getSimpleName());
+	@Test
+	public void moveTurnRightFromSouth() {
 
-    }
+		Rover rover = new Rover(0, 0, new South());
 
-    @Test
-    public void moveTurnLeftFromEast() {
+		rover.move(new String[] { "Right" });
 
-        Rover rover = new Rover(null, new DirectionEast());
-        rover.turnLeft();
+		assertEquals("0,0,West", rover.position.toString());
 
-        Direction direction = rover.whereAreYouFacing();
-        Assert.assertEquals(new DirectionNorth().getClass().getSimpleName(), direction.getClass().getSimpleName());
+	}
 
-    }
+	@Test
+	public void moveTurnLeftFromNorth() {
 
-    @Test
-    public void moveTurnLeftFromWest() {
+		Rover rover = new Rover(0, 0, new North());
 
-        Rover rover = new Rover(null, new DirectionWest());
-        rover.turnLeft();
+		rover.move(new String[] { "Left" });
 
-        Direction direction = rover.whereAreYouFacing();
-        Assert.assertEquals(new DirectionSouth().getClass().getSimpleName(), direction.getClass().getSimpleName());
+		assertEquals("0,0,West", rover.position.toString());
 
-    }
+	}
 
-    @Test
-    public void moveTurnLeftFromSouth() {
+	@Test
+	public void moveTurnLeftFromEast() {
 
-        Rover rover = new Rover(null, new DirectionSouth());
-        rover.turnLeft();
+		Rover rover = new Rover(0, 0, new East());
 
-        Direction direction = rover.whereAreYouFacing();
-        Assert.assertEquals(new DirectionEast().getClass().getSimpleName(), direction.getClass().getSimpleName());
+		rover.move(new String[] { "Left" });
 
-    }
+		assertEquals("0,0,North", rover.position.toString());
 
-    @Test
-    public void routeCommands() {
+	}
 
-        Rover rover = new Rover(new Location(2, 2), new DirectionNorth());
+	@Test
+	public void moveTurnLeftFromWest() {
 
-        List<String> commands = new ArrayList<>();
-        commands.add("Forward");
-        commands.add("Left");
-        commands.add("Forward");
-        commands.add("Forward");
-        commands.add("Left");
-        commands.add("Forward");
-        commands.add("Forward");
-        commands.add("Right");
-        commands.add("Backwards");
-        commands.add("Backwards");
+		Rover rover = new Rover(0, 0, new West());
 
-        rover.move(commands);
+		rover.move(new String[] { "Left" });
 
-        Location location = rover.whereAreYou();
+		assertEquals("0,0,South", rover.position.toString());
 
-        Assert.assertEquals(2, location.getX());
-        Assert.assertEquals(1, location.getY());
+	}
 
-        Direction direction = rover.whereAreYouFacing();
+	@Test
+	public void moveTurnLeftFromSouth() {
 
-        Assert.assertEquals(new DirectionWest().getClass().getSimpleName(), direction.getClass().getSimpleName());
+		Rover rover = new Rover(0, 0, new South());
 
-    }
+		rover.move(new String[] { "Left" });
+
+		assertEquals("0,0,East", rover.position.toString());
+
+	}
+
+	@Test
+	public void routeCommands() {
+
+		Rover rover = new Rover(2, 2, new North());
+
+		String[] commands = new String[10];
+		commands[0] = "Forward";
+		commands[1] = "Left";
+		commands[2] = "Forward";
+		commands[3] = "Forward";
+		commands[4] = "Left";
+		commands[5] = "Forward";
+		commands[6] = "Forward";
+		commands[7] = "Right";
+		commands[8] = "Backwards";
+		commands[9] = "Backwards";
+
+		rover.move(commands);
+
+		assertEquals("2,1,West", rover.position.toString());
+
+	}
+
+	@Test
+	public void planetHorizonFordwardEast() {
+
+		Rover rover = new Rover(Mars.MARS_MAX_X, 0, new East());
+
+		rover.move(new String[] { "Forward" });
+
+		assertEquals("-" + Mars.MARS_MAX_X + ",0,East", rover.position.toString());
+
+	}
+
+	@Test
+	public void planetHorizonBackwardsEast() {
+
+		Rover rover = new Rover(Mars.MARS_MAX_X * -1, 0, new East());
+
+		rover.move(new String[] { "Backwards" });
+
+		assertEquals(Mars.MARS_MAX_X + ",0,East", rover.position.toString());
+
+	}
+
+	@Test
+	public void planetHorizonFordwardWest() {
+
+		Rover rover = new Rover(Mars.MARS_MAX_X * -1, 0, new West());
+
+		rover.move(new String[] { "Forward" });
+
+		assertEquals(Mars.MARS_MAX_X + ",0,West", rover.position.toString());
+
+	}
+
+	@Test
+	public void planetHorizonBackwardsWest() {
+
+		Rover rover = new Rover(Mars.MARS_MAX_X, 0, new West());
+
+		rover.move(new String[] { "Backwards" });
+
+		assertEquals("-" + Mars.MARS_MAX_X + ",0,West", rover.position.toString());
+
+	}
+
+	@Test
+	public void planetHorizonFordwardNorth() {
+
+		Rover rover = new Rover(0, Mars.MARS_MAX_Y, new North());
+
+		rover.move(new String[] { "Forward" });
+
+		assertEquals("0,-" + Mars.MARS_MAX_Y + ",North", rover.position.toString());
+
+	}
+
+	@Test
+	public void planetHorizonBackwardsNorth() {
+
+		Rover rover = new Rover(0, Mars.MARS_MAX_Y * -1, new North());
+
+		rover.move(new String[] { "Backwards" });
+
+		assertEquals("0," + Mars.MARS_MAX_Y + ",North", rover.position.toString());
+
+	}
+
+	@Test
+	public void planetHorizonFordwardSouth() {
+
+		Rover rover = new Rover(0, Mars.MARS_MAX_Y * -1, new South());
+
+		rover.move(new String[] { "Forward" });
+
+		assertEquals("0," + Mars.MARS_MAX_Y + ",South", rover.position.toString());
+
+	}
+
+	@Test
+	public void planetHorizonBackwardsSouth() {
+
+		Rover rover = new Rover(0, Mars.MARS_MAX_Y, new South());
+
+		rover.move(new String[] { "Backwards" });
+
+		assertEquals("0,-" + Mars.MARS_MAX_Y + ",South", rover.position.toString());
+
+	}
+
+	@Test
+	public void travelXEquator() {
+
+		Rover rover = new Rover(0, 0, new East());
+
+		int fullSpinToThePlanet = Mars.MARS_MAX_X * 2 + 1;
+
+		String[] commands = new String[fullSpinToThePlanet];
+
+		for (int i = 0; i < fullSpinToThePlanet; i++) {
+			commands[i] = "Forward";
+
+		}
+
+		rover.move(commands);
+
+		assertEquals("0,0,East", rover.position.toString());
+
+	}
+
+	@Test
+	public void travelYEquator() {
+
+		Rover rover = new Rover(0, 0, new North());
+
+		int fullSpinToThePlanet = Mars.MARS_MAX_Y * 2 + 1;
+
+		String[] commands = new String[fullSpinToThePlanet];
+
+		for (int i = 0; i < fullSpinToThePlanet; i++) {
+			commands[i] = "Forward";
+
+		}
+
+		rover.move(commands);
+
+		assertEquals("0,0,North", rover.position.toString());
+
+	}
+
+	@Test
+	public void abortRouteOnObstaclesBeforeHitThemAndReportThem() {
+
+		Rover rover = new Rover(4, 3, new East());
+
+		Mars.OBSTACLES = new Location[1];
+		Mars.OBSTACLES[0] = new Location(5, 4);
+		
+		String[] commands = new String[4];
+		commands[0] = "Forward";
+		commands[1] = "Left";
+		commands[2] = "Forward";
+		commands[3] = "Forward";
+
+		rover.move(commands);
+		
+		Mars.OBSTACLES = null; // Clean the obstacles to let other tests work
+
+		assertEquals("5,3,North", rover.position.toString());
+
+	}
 
 }
