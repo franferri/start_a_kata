@@ -3,68 +3,81 @@ package com.gildedrose;
 import java.util.Arrays;
 
 class GildedRose {
-	Item[] items;
+    Item[] items;
 
-	public GildedRose(Item[] items) {
-		this.items = items;
-	}
+    public GildedRose(Item[] items) {
+        this.items = items;
+    }
 
-	public void updateQuality() {
+    public void updateQuality() {
 
-		Item[] reducedItems = Arrays.stream(items).filter(x -> !x.name.equals("Sulfuras, Hand of Ragnaros")).toArray(Item[]::new);
+        Arrays.stream(items)
+                .filter(x -> !x.name.equals("Sulfuras, Hand of Ragnaros"))
+                .forEach(item -> {
 
-		for (int i = 0; i < reducedItems.length; i++) {
+                    int previousSellIn = item.sellIn;
+                    item.sellIn -= 1;
 
-			int previousSellIn = items[i].sellIn;
-			items[i].sellIn -= 1;
+                    boolean isBackstage = item.name.equals("Backstage passes to a TAFKAL80ETC concert");
+                    boolean isAgedBrie = item.name.equals("Aged Brie");
+                    boolean isGeneric = !isBackstage && !isAgedBrie;
+                    boolean isExpired = item.sellIn < 0;
 
-			boolean isBackstage = items[i].name.equals("Backstage passes to a TAFKAL80ETC concert");
-			boolean isAgedBrie = items[i].name.equals("Aged Brie");
-			boolean isGeneric = !isBackstage && !isAgedBrie;
-			boolean qualityLowerThanFifty = items[i].quality < 50;
-			boolean isExpired = items[i].sellIn < 0;
+                    if (isAgedBrie) {
 
-			if (isAgedBrie && qualityLowerThanFifty) {
-				incrementQualityByOne(i);
-				if (isExpired) {
-					incrementQualityByOne(i);
-				}
-			}
+                        incrementQualityByOne(item);
+                        if (isExpired) {
+                            incrementQualityByOne(item);
+                        }
 
-			if (isBackstage && qualityLowerThanFifty) {
+                    }
 
-				incrementQualityByOne(i);
+                    if (isBackstage) {
 
-				if (previousSellIn < 11) {
-					incrementQualityByOne(i);
+                        incrementQualityByOne(item);
 
-				}
-				if (previousSellIn < 6) {
-					incrementQualityByOne(i);
-				}
+                        if (previousSellIn <= 10) {
+                            incrementQualityByOne(item);
 
-				if (isExpired) {
-					items[i].quality = 0;
-				}
+                        }
+                        if (previousSellIn <= 5) {
+                            incrementQualityByOne(item);
+                        }
 
-			}
+                        if (isExpired) {
+                            item.quality = 0;
+                        }
 
-			if (isGeneric && items[i].quality > 0) {
-				decrementQualityByOne(i);
-				if (isExpired) {
-					decrementQualityByOne(i);
-				}
+                    }
 
-			}
+                    if (isGeneric) {
+                        decrementQualityByOne(item);
+                        if (isExpired) {
+                            decrementQualityByOne(item);
+                        }
 
-		}
-	}
+                    }
 
-	private void decrementQualityByOne(int i) {
-		items[i].quality = items[i].quality - 1;
-	}
+                });
+    }
 
-	private void incrementQualityByOne(int i) {
-		items[i].quality = items[i].quality + 1;
-	}
+    private void decrementQualityByOne(Item item) {
+        item.quality -= 1;
+        ensureEdgeCases(item);
+    }
+
+    private void incrementQualityByOne(Item item) {
+        item.quality += 1;
+        ensureEdgeCases(item);
+    }
+
+    private void ensureEdgeCases(Item item) {
+        if (item.quality > 50) {
+            item.quality = 50;
+        }
+        if (item.quality < 0) {
+            item.quality = 0;
+        }
+    }
+
 }

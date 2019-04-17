@@ -4,25 +4,17 @@ import com.gildedrose.Item;
 
 public class ItemGeneric extends ItemType {
 
-	public ItemGeneric(Item item) {
-		super(item);
-	}
+    @Override
+    public void updateQuality(Item item) {
 
-	@Override
-	public Item updateQuality() {
+        item.sellIn -= 1;
+        isExpired = item.sellIn < 0;
 
-		sellIn -= 1;
-		isExpired = sellIn < 0;
+        decrementQualityByOne(item);
+        if (isExpired) {
+            decrementQualityByOne(item);
+        }
 
-		if (quality > 0) {
-			decrementQualityByOne();
-			if (isExpired) {
-				decrementQualityByOne();
-			}
-		}
-
-		return this;
-
-	}
+    }
 
 }

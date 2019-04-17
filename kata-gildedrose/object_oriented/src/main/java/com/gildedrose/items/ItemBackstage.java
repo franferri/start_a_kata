@@ -4,31 +4,23 @@ import com.gildedrose.Item;
 
 public class ItemBackstage extends ItemType {
 
-	public ItemBackstage(Item item) {
-		super(item);
-	}
+    @Override
+    public void updateQuality(Item item) {
 
-	@Override
-	public Item updateQuality() {
+        int previousSellIn = item.sellIn;
+        item.sellIn -= 1;
+        isExpired = item.sellIn < 0;
 
-		int previousSellIn = sellIn;
-		sellIn -= 1;
-		isExpired = sellIn < 0;
+        incrementQualityByOne(item);
+        if (previousSellIn < 11) {
+            incrementQualityByOne(item);
+        }
+        if (previousSellIn < 6) {
+            incrementQualityByOne(item);
+        }
+        if (isExpired) {
+            item.quality = 0;
+        }
 
-		if (qualityLowerThanFifty) {
-			incrementQualityByOne();
-			if (previousSellIn < 11) {
-				incrementQualityByOne();
-			}
-			if (previousSellIn < 6) {
-				incrementQualityByOne();
-			}
-			if (isExpired) {
-				quality = 0;
-			}
-		}
-
-		return this;
-
-	}
+    }
 }

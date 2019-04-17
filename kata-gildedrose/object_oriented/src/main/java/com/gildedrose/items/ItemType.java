@@ -2,35 +2,41 @@ package com.gildedrose.items;
 
 import com.gildedrose.Item;
 
-public abstract class ItemType extends Item {
+public abstract class ItemType {
 
-	boolean qualityLowerThanFifty = quality < 50;
 	boolean isExpired;
 
-	public ItemType(Item item) {
-		super(item.name, item.sellIn, item.quality);
+	public abstract void updateQuality(Item item);
+
+	protected void decrementQualityByOne(Item item) {
+		item.quality -= 1;
+		ensureEdgeCases(item);
 	}
 
-	public abstract Item updateQuality();
-
-	void decrementQualityByOne() {
-		quality = quality - 1;
+	protected void incrementQualityByOne(Item item) {
+		item.quality += 1;
+		ensureEdgeCases(item);
 	}
 
-	void incrementQualityByOne() {
-		quality = quality + 1;
+	private void ensureEdgeCases(Item item) {
+		if (item.quality > 50) {
+			item.quality = 50;
+		}
+		if (item.quality < 0) {
+			item.quality = 0;
+		}
 	}
 
 	public static <T extends ItemType> ItemType builder(Item item) {
 
 		if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-			return new ItemBackstage(item);
+			return new ItemBackstage();
 		} else if (item.name.equals("Aged Brie")) {
-			return new ItemAgedBrie(item);
+			return new ItemAgedBrie();
 		} else if (item.name.equals("Sulfuras, Hand of Ragnaros")) {
-			return new ItemSulfuras(item);
+			return new ItemSulfuras();
 		} else {
-			return new ItemGeneric(item);
+			return new ItemGeneric();
 		}
 
 	}

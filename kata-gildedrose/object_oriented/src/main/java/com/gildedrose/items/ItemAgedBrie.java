@@ -4,24 +4,16 @@ import com.gildedrose.Item;
 
 public class ItemAgedBrie extends ItemType {
 
-	public ItemAgedBrie(Item item) {
-		super(item);
-	}
-
 	@Override
-	public Item updateQuality() {
+	public void updateQuality(Item item) {
 
-		sellIn -= 1;
-		isExpired = sellIn < 0;
+		item.sellIn -= 1;
+		isExpired = item.sellIn < 0;
 
-		if (qualityLowerThanFifty) {
-			incrementQualityByOne();
-			if (isExpired) {
-				incrementQualityByOne();
-			}
+		incrementQualityByOne(item);
+		if (isExpired) {
+			incrementQualityByOne(item);
 		}
-
-		return this;
 
 	}
 
