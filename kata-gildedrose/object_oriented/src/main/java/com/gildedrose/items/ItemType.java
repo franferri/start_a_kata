@@ -6,7 +6,7 @@ public abstract class ItemType {
 
     public abstract void updateQuality(Item item);
 
-    protected void oneDayPass(Item item) {
+    protected void oneDayCloseToExpire(Item item) {
         item.sellIn -= 1;
     }
 
@@ -14,23 +14,17 @@ public abstract class ItemType {
         return item.sellIn < 0;
     }
 
-    protected void decrementQualityByOne(Item item) {
-        item.quality -= 1;
-        ensureEdgeCases(item);
-    }
+    protected void qualityChangesBy(Item item, int quality) {
 
-    protected void incrementQualityByOne(Item item) {
-        item.quality += 1;
-        ensureEdgeCases(item);
-    }
+        item.quality += quality;
 
-    private void ensureEdgeCases(Item item) {
         if (item.quality > 50) {
             item.quality = 50;
         }
         if (item.quality < 0) {
             item.quality = 0;
         }
+
     }
 
 }

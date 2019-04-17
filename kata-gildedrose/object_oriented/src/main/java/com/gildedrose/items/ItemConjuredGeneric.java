@@ -2,7 +2,7 @@ package com.gildedrose.items;
 
 import com.gildedrose.Item;
 
-public class ItemGeneric extends ItemType {
+public class ItemConjuredGeneric extends ItemType {
 
     @Override
     public void updateQuality(Item item) {

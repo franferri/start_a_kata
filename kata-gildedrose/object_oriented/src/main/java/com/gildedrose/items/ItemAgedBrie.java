@@ -7,11 +7,11 @@ public class ItemAgedBrie extends ItemType {
 	@Override
 	public void updateQuality(Item item) {
 
-		oneDayPass(item);
+		oneDayCloseToExpire(item);
 
-		incrementQualityByOne(item);
+		qualityChangesBy(item, +1);
 		if (isExpired(item)) {
-			incrementQualityByOne(item);
+			qualityChangesBy(item, +1);
 		}
 
 	}

@@ -9,14 +9,14 @@ public class ItemBackstage extends ItemType {
 
         int previousSellIn = item.sellIn;
 
-        oneDayPass(item);
+        oneDayCloseToExpire(item);
 
-        incrementQualityByOne(item);
+        qualityChangesBy(item, +1);
         if (previousSellIn < 11) {
-            incrementQualityByOne(item);
+            qualityChangesBy(item, +1);
         }
         if (previousSellIn < 6) {
-            incrementQualityByOne(item);
+            qualityChangesBy(item, +1);
         }
         if (isExpired(item)) {
             item.quality = 0;

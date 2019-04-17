@@ -3,6 +3,7 @@ package com.gildedrose;
 import java.util.Arrays;
 
 class GildedRose {
+
     Item[] items;
 
     public GildedRose(Item[] items) {
@@ -16,69 +17,70 @@ class GildedRose {
                 .forEach(item -> {
 
                     int previousSellIn = item.sellIn;
-                    item.sellIn -= 1;
+                    oneDayCloseToExpire(item);
 
-                    boolean isBackstage = item.name.equals("Backstage passes to a TAFKAL80ETC concert");
-                    boolean isAgedBrie = item.name.equals("Aged Brie");
-                    boolean isGeneric = !isBackstage && !isAgedBrie;
+                    boolean isBackstage = item.name.endsWith("Backstage passes to a TAFKAL80ETC concert");
+                    boolean isAgedBrie = item.name.endsWith("Aged Brie");
+                    boolean isConjured = item.name.startsWith("Conjured");
+                    boolean isGeneric = !isBackstage && !isAgedBrie && !isConjured;
                     boolean isExpired = item.sellIn < 0;
 
                     if (isAgedBrie) {
 
-                        incrementQualityByOne(item);
-                        if (isExpired) {
-                            incrementQualityByOne(item);
-                        }
+                        qualityChangesBy(item, +1);
+
+                        if (isExpired) qualityChangesBy(item, +1);
 
                     }
 
                     if (isBackstage) {
 
-                        incrementQualityByOne(item);
+                        qualityChangesBy(item, +1);
 
-                        if (previousSellIn <= 10) {
-                            incrementQualityByOne(item);
+                        if (previousSellIn <= 10) qualityChangesBy(item, +1);
 
-                        }
-                        if (previousSellIn <= 5) {
-                            incrementQualityByOne(item);
-                        }
+                        if (previousSellIn <= 5) qualityChangesBy(item, +1);
 
-                        if (isExpired) {
-                            item.quality = 0;
-                        }
+                        if (isExpired) item.quality = 0;
 
                     }
 
                     if (isGeneric) {
 
-                        decrementQualityByOne(item);
-                        if (isExpired) {
-                            decrementQualityByOne(item);
-                        }
+                        qualityChangesBy(item, -1);
+
+                        if (isExpired) qualityChangesBy(item, -1);
+
+                    }
+
+                    if (isConjured) {
+
+                        qualityChangesBy(item, -2);
+
+                        if (isExpired) qualityChangesBy(item, -2);
 
                     }
 
                 });
     }
 
-    private void decrementQualityByOne(Item item) {
-        item.quality -= 1;
-        ensureEdgeCases(item);
+    private void oneDayCloseToExpire(Item item) {
+
+        item.sellIn -= 1;
+
     }
 
-    private void incrementQualityByOne(Item item) {
-        item.quality += 1;
-        ensureEdgeCases(item);
-    }
+    private void qualityChangesBy(Item item, int quality) {
 
-    private void ensureEdgeCases(Item item) {
+        item.quality += quality;
+
         if (item.quality > 50) {
             item.quality = 50;
         }
         if (item.quality < 0) {
             item.quality = 0;
         }
+
     }
 
 }
