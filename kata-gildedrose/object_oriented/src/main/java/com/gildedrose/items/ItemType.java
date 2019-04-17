@@ -6,12 +6,22 @@ public abstract class ItemType {
 
     public abstract void updateQuality(Item item);
 
-    protected void oneDayCloseToExpire(Item item) {
+    protected void passOneDay(Item item) {
+
         item.sellIn -= 1;
+
     }
 
     protected boolean isExpired(Item item) {
+
         return item.sellIn < 0;
+
+    }
+
+    protected int remainingDaysToExpire(Item item) {
+
+        return item.sellIn;
+
     }
 
     protected void qualityChangesBy(Item item, int quality) {

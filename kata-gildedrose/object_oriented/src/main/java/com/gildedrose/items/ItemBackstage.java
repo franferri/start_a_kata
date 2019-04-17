@@ -7,17 +7,18 @@ public class ItemBackstage extends ItemType {
     @Override
     public void updateQuality(Item item) {
 
-        int previousSellIn = item.sellIn;
-
-        oneDayCloseToExpire(item);
-
         qualityChangesBy(item, +1);
-        if (previousSellIn < 11) {
+
+        if (remainingDaysToExpire(item) <= 10) {
             qualityChangesBy(item, +1);
         }
-        if (previousSellIn < 6) {
+
+        if (remainingDaysToExpire(item) <= 5) {
             qualityChangesBy(item, +1);
         }
+
+        passOneDay(item);
+
         if (isExpired(item)) {
             item.quality = 0;
         }

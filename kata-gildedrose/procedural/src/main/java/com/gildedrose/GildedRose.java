@@ -16,20 +16,18 @@ class GildedRose {
                 .filter(x -> !x.name.equals("Sulfuras, Hand of Ragnaros"))
                 .forEach(item -> {
 
-                    int previousSellIn = item.sellIn;
-                    oneDayCloseToExpire(item);
-
                     boolean isBackstage = item.name.endsWith("Backstage passes to a TAFKAL80ETC concert");
                     boolean isAgedBrie = item.name.endsWith("Aged Brie");
                     boolean isConjured = item.name.startsWith("Conjured");
                     boolean isGeneric = !isBackstage && !isAgedBrie && !isConjured;
-                    boolean isExpired = item.sellIn < 0;
 
                     if (isAgedBrie) {
 
                         qualityChangesBy(item, +1);
 
-                        if (isExpired) qualityChangesBy(item, +1);
+                        passOneDay(item);
+
+                        if (isExpired(item)) qualityChangesBy(item, +1);
 
                     }
 
@@ -37,11 +35,12 @@ class GildedRose {
 
                         qualityChangesBy(item, +1);
 
-                        if (previousSellIn <= 10) qualityChangesBy(item, +1);
+                        if (remainingDaysToExpire(item) <= 10) qualityChangesBy(item, +1);
+                        if (remainingDaysToExpire(item) <= 5) qualityChangesBy(item, +1);
 
-                        if (previousSellIn <= 5) qualityChangesBy(item, +1);
+                        passOneDay(item);
 
-                        if (isExpired) item.quality = 0;
+                        if (isExpired(item)) item.quality = 0;
 
                     }
 
@@ -49,7 +48,9 @@ class GildedRose {
 
                         qualityChangesBy(item, -1);
 
-                        if (isExpired) qualityChangesBy(item, -1);
+                        passOneDay(item);
+
+                        if (isExpired(item)) qualityChangesBy(item, -1);
 
                     }
 
@@ -57,16 +58,30 @@ class GildedRose {
 
                         qualityChangesBy(item, -2);
 
-                        if (isExpired) qualityChangesBy(item, -2);
+                        passOneDay(item);
+
+                        if (isExpired(item)) qualityChangesBy(item, -2);
 
                     }
 
                 });
     }
 
-    private void oneDayCloseToExpire(Item item) {
+    private void passOneDay(Item item) {
 
         item.sellIn -= 1;
+
+    }
+
+    private boolean isExpired(Item item) {
+
+        return item.sellIn < 0;
+
+    }
+
+    private int remainingDaysToExpire(Item item) {
+
+        return item.sellIn;
 
     }
 

@@ -7,9 +7,10 @@ public class ItemGeneric extends ItemType {
     @Override
     public void updateQuality(Item item) {
 
-        oneDayCloseToExpire(item);
-
         qualityChangesBy(item, -1);
+
+        passOneDay(item);
+
         if (isExpired(item)) {
             qualityChangesBy(item, -1);
         }
