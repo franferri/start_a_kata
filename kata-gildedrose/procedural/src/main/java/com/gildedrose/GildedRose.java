@@ -51,6 +51,7 @@ class GildedRose {
                     }
 
                     if (isGeneric) {
+
                         decrementQualityByOne(item);
                         if (isExpired) {
                             decrementQualityByOne(item);

@@ -8,8 +8,8 @@ public class ItemBackstage extends ItemType {
     public void updateQuality(Item item) {
 
         int previousSellIn = item.sellIn;
-        item.sellIn -= 1;
-        isExpired = item.sellIn < 0;
+
+        oneDayPass(item);
 
         incrementQualityByOne(item);
         if (previousSellIn < 11) {
@@ -18,7 +18,7 @@ public class ItemBackstage extends ItemType {
         if (previousSellIn < 6) {
             incrementQualityByOne(item);
         }
-        if (isExpired) {
+        if (isExpired(item)) {
             item.quality = 0;
         }
 

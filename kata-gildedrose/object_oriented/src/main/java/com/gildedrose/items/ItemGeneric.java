@@ -7,11 +7,10 @@ public class ItemGeneric extends ItemType {
     @Override
     public void updateQuality(Item item) {
 
-        item.sellIn -= 1;
-        isExpired = item.sellIn < 0;
+        oneDayPass(item);
 
         decrementQualityByOne(item);
-        if (isExpired) {
+        if (isExpired(item)) {
             decrementQualityByOne(item);
         }
 
