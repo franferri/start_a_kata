@@ -1,7 +1,7 @@
 
 ### If you are trying to organize a Coding Dojo
 
-[Example request for your company](https://github.com/franferri/codingdojos-katas/blob/master/Example%20request%20for%20your%20company.md)
+[Example request for your company](https://github.com/franferri/your-codingdojos-katas/blob/master/Example%20request%20for%20your%20company.md)
 
 ### If is your your first time
 
@@ -12,33 +12,25 @@ Please make sure you can run a simple test in your prefered language before the 
 If you don't know how to start you may want download this repo, it contains 2 java project examples, they are ready to enable you to start with a simple example class and unit test. This 2 projects are the same, but one has maven build in.
 
 #### Clone this repository:
-    $ git clone https://github.com/franferri/codingdojos-katas.git
+    $ git clone https://github.com/franferri/your-codingdojos-katas.git
 
-If you are using an IDE like IntelliJ or Eclipse load the project "start-kata-project" in the repo and you are good to go. Skip to the next section.
+If you are using an IDE like IntelliJ or Eclipse load the project "your-codingdojos-katas" in the repo and you are good to go, you can skip to the next section. 
 
 If you like to use a text editor and the console keep reading...
 
 #### Check if you have Java accesible from the cosole running:
     $ java -version
 
-#### Check if you have Maven in your path running, if don't no worries, keep reading:
-    $ mvn -version
-
-#### If you have java and maven - run the example
-    $ cd start-kata-project
-    $ mvn clean test
-
 #### If you hava java but don't have maven installed use the example with maven buildin
 
-    $ cd start-kata-project-builtin-maven
+    $ cd your-kata-project
     $ ./mvnw clean test
 
 Please check that your gear is fine.
 
-
 ### Creating your first test
 
-![Test in 5 steps](https://github.com/franferri/codingdojos-katas/blob/master/images/test_in_5_steps.jpg)
+![Test in 5 steps](https://github.com/franferri/your-codingdojos-katas/blob/master/images/test_in_5_steps.jpg)
 
 Suggested reading: https://codurance.com/2014/12/13/naming-test-classes-and-methods/
 
@@ -51,7 +43,7 @@ Suggested reading: https://codurance.com/2014/12/13/naming-test-classes-and-meth
   * Green - Write enough code to make the test pass
   * Refactor - Clean up your code and your tests (don't forget that your tests are code too)
 
-![Red Green Refactor](https://github.com/franferri/codingdojos-katas/blob/master/images/red_green_refactor.jpg)
+![Red Green Refactor](https://github.com/franferri/your-codingdojos-katas/blob/master/images/red_green_refactor.jpg)
 
 Suggested reading: http://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html
 
