@@ -7,13 +7,22 @@
 
 When you attend a Coding Dojo is good to prepare your IDE or prefered environment for writing and running tests.
 
-If you don't know how to start you may want download from this repo, it contains a base empty maven java project with an example.
-Import it in your IDE or from the console, so you can check your gear before we start.
-Do this in advance of the event to save time.
+Please make sure you can run a simple test in your prefered language before the event.
 
-Clone this repository:
+If you don't know how to start you may want download this repo, it contains 2 java project examples, they are ready to enable you to start with a simple example class and unit test. This 2 projects are the same, but one has maven build in.
 
+#### Clone this repository:
     $ git clone https://github.com/franferri/codingdojos-katas.git
+
+If you are using an IDE like IntelliJ or Eclipse load the project "start-kata-project" in the repo and you are good to go. Skip to the next section.
+
+If you like to use a text editor and the console keep reading...
+
+#### Check if you have Java accesible from the cosole running:
+    $ java -version
+
+#### Check if you have Maven in your path running, if don't no worries, keep reading:
+    $ mvn -version
 
 #### If you have java and maven - run the example
     $ cd start-kata-project
@@ -24,13 +33,16 @@ Clone this repository:
     $ cd start-kata-project-builtin-maven
     $ ./mvnw clean test
 
-**Creating your first test**
+Please check that your gear is fine.
+
+
+### Creating your first test
 
 ![Test in 5 steps](https://github.com/franferri/codingdojos-katas/blob/master/images/test_in_5_steps.jpg)
 
 Suggested reading: https://codurance.com/2014/12/13/naming-test-classes-and-methods/
 
-**Follow the rules, use TDD**
+### Follow the rules, use TDD
 * You must write a failing test before you write any production code.
 * You must not write more of a test than is sufficient to fail, or fail to compile.
 * You must not write more production code than is sufficient to make the currently failing test pass.
@@ -43,4 +55,4 @@ Suggested reading: https://codurance.com/2014/12/13/naming-test-classes-and-meth
 
 Suggested reading: http://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html
 
-**Enjoy**
+### And remember, the most important part is to Enjoy!

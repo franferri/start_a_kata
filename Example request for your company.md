@@ -15,6 +15,7 @@ The Coding Dojo will be driven by [VOLUNTEER] and will consist in a Kata’s exe
 Example past events:
 
 https://www.meetup.com/es-ES/Dublin-Software-Crafters/events/244660317/
+
 https://www.meetup.com/es-ES/Dublin-Software-Crafters/events/245045253/
 
 * The exercise will be executed by groups of 2 persons
