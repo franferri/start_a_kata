@@ -23,7 +23,7 @@ If you like to use a text editor and the console keep reading...
 
 #### If you hava java but don't have maven installed use the example with maven buildin
 
-    $ cd your-kata-project
+    $ cd your-kata-project-using-java
     $ ./mvnw clean test
 
 Please check that your gear is fine.
