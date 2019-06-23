@@ -22,6 +22,12 @@ Thumbs.db
 *.iws
 *.iml
 
+# Python
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+
 # Custom configuration
 builds/
 tmp/
