@@ -40,23 +40,19 @@ Java and/or Kotlin
 
 Python
 * In PyCharm, just open the folder: "your-kata-project-using-python"
+* Open settings, Project interpreter, Add new, Mark Inherid global site-packages, and save
+* Edit run configurations, Working Dir, remove the ending "/tests" save and Run.
 
-**Run the example tests**
-Go to the tests folders of the projects and select run.
+### Run the example tests
 
-### Using a bit the console too
-
-The Java and Kotlin example projects use maven, and maven is build in them, you don't need any maven installed in your computer. You can run the tests with the following commands
+The **Java** and **Kotlin** example projects use maven, and maven is buildin in the examples, you don't need any maven installed in your computer. You can run the tests with the following commands
 
     $ cd your-kata-project-using-java
     $ ./mvnw clean test
 
-The Python project is Python 3, to run the tests from the console you just need to:
+The Python project is Python 3, to run the tests from the console you just need to follow: https://github.com/franferri/your-codingdojos-katas/tree/master/your-kata-project-using-python3
 
-	$ cd your-kata-project-using-python
-	$ python3 
-
-### Creating your first test
+### Creating your first test (suggested convention)
 
 ![Test in 5 steps](https://github.com/franferri/your-codingdojos-katas/blob/master/images/test_in_5_steps.jpg)
 
