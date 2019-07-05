@@ -22,12 +22,20 @@ Thumbs.db
 *.iws
 *.iml
 
+# Python
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+
 # Custom configuration
 builds/
 tmp/
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+*.class
+*.jar
 
 # eclipse
 .settings/

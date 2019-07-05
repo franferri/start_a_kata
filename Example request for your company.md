@@ -1,11 +1,15 @@
 
 ## Coding Dojo - Proposal
 
-### What’s this Coding Dojo/Kata all about?
-Is a Software Crafters session, meaning we respect each other, show passion for learning and teaching!
+### What’s this Coding Dojo all about?
 
-A Coding Dojo is an event where we just sit together and develop for an hour one well defined problem.
-During the time that the exercise lasts you seek for a solution of the problem, you compare yours with other people and you share your blockers or strategies.
+A Coding Dojo is an event where some people just sit together and develop for some time one well defined problem.
+Usually the problem is just a Kata exercise.
+
+People code in couples using a single computer per couple, switching at intervals who is touching the keyboard.
+In this space pepole grow learning, has to respect each other opinions, and also becomes passionate for teaching!
+
+During the time that the exercise lasts you seek for a solution of the problem, people compare results with other people and comment blockers and strategies.
 
 ### What we want to do
 I would like to organize a Coding Dojo in [YOUR COMPANY OFFICE HERE], every X weeks for a group of aprox X people.

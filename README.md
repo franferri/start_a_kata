@@ -1,34 +1,58 @@
-
-### If you are trying to organize a Coding Dojo
-
-[Example request for your company](https://github.com/franferri/your-codingdojos-katas/blob/master/Example%20request%20for%20your%20company.md)
-
-### If is your your first time
+### If is your your first time in a Coding Dojo read here
 
 When you attend a Coding Dojo is good to prepare your IDE or prefered environment for writing and running tests.
 
-Please make sure you can run a simple test in your prefered language before the event.
+Let's try to run a simple test in your prefered language before the event.
 
-If you don't know how to start you may want download this repo, it contains 2 java project examples, they are ready to enable you to start with a simple example class and unit test. This 2 projects are the same, but one has maven build in.
+**If you don't know how to start no worries, I got your back.**
 
-#### Clone this repository:
-    $ git clone https://github.com/franferri/your-codingdojos-katas.git
+**Language**
 
-If you are using an IDE like IntelliJ or Eclipse load the project "your-codingdojos-katas" in the repo and you are good to go, you can skip to the next section. 
+Make sure you have your prefered language installed, for this examples I'm covering Java/Kotlin and Python3. Run:
+* java -version
+* python3 --version, or python --version
 
-If you like to use a text editor and the console keep reading...
+**IDE**
 
-#### Check if you have Java accesible from the cosole running:
-    $ java -version
+Free IDEs for Java
+* Eclipse IDE for Java Developers or Eclipse IDE for Enterprise Java Developers: https://www.eclipse.org/downloads/packages/
+* IntelliJ Community: https://www.jetbrains.com/idea/download/
 
-#### If you hava java but don't have maven installed use the example with maven buildin
+Free IDEs for Python
+* PyCharm Community: https://www.jetbrains.com/pycharm/download/
+
+**Simple Examples**
+
+Clone or download this very repo, it contains project examples in different languages, ready to enable you to start with a simple example class and unit test.
+
+* Using Git: git clone https://github.com/franferri/your-codingdojos-katas.git
+* Direct download: https://github.com/franferri/your-codingdojos-katas/archive/master.zip
+
+**Open the code in your IDE**
+
+If you are using an IDE load the project folder located inside "your-codingdojos-katas" that you just cloned/downloaded.
+
+Java
+* In Eclipse use File->Import->Existent Maven Project, then select the folder "your-kata-project-using-java" for example
+
+Java and/or Kotlin
+* In IntelliJ, just open the folder: "your-kata-project-using-java" or "your-kata-project-using-kotlin-and-java"
+
+Python
+* In PyCharm, just open the folder: "your-kata-project-using-python"
+* Open settings, Project interpreter, Add new, Mark Inherid global site-packages, and save
+* Edit run configurations, Working Dir, remove the ending "/tests" save and Run.
+
+### Run the example tests
+
+The **Java** and **Kotlin** example projects use maven, and maven is buildin in the examples, you don't need any maven installed in your computer. You can run the tests with the following commands
 
     $ cd your-kata-project-using-java
     $ ./mvnw clean test
 
-Please check that your gear is fine.
+The Python project is Python 3, to run the tests from the console you just need to follow: https://github.com/franferri/your-codingdojos-katas/tree/master/your-kata-project-using-python3
 
-### Creating your first test
+### Creating your first test (suggested convention)
 
 ![Test in 5 steps](https://github.com/franferri/your-codingdojos-katas/blob/master/images/test_in_5_steps.jpg)
 
@@ -48,3 +72,7 @@ Suggested reading: https://codurance.com/2014/12/13/naming-test-classes-and-meth
 Suggested reading: http://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html
 
 ### And remember, the most important part is to Enjoy!
+
+### If you are trying to organize a Coding Dojo in your company
+
+[Example request for your company](https://github.com/franferri/your-codingdojos-katas/blob/master/Example%20request%20for%20your%20company.md)
