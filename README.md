@@ -1,78 +1,96 @@
-### If is your your first time in a Coding Dojo read here
+### First time in doing a Kata?
 
-When you attend a Coding Dojo is good to prepare your IDE or prefered environment for writing and running tests.
+**No worries, I got your back, in 5 minutes you are ready**
 
-Let's try to run a simple test in your prefered language before the event.
+When you are going to attend a Kata is good to prepare in advance your IDE or prefered environment for writing and running tests.
 
-**If you don't know how to start no worries, I got your back.**
+In the next lines we are going to:
+* Install an IDE (in case you don't have any)
+* Download example startup kata project
+* Load the code in the IDE
+* Run the example tests
+* Learn a bit about TDD
 
 **Language**
 
-Make sure you have your prefered language installed, for this examples I'm covering Java/Kotlin and Python3. Run:
-* java -version
-* python3 --version, or python --version
+Make sure you have your prefered language interpreter or virtual machine installed. For this examples I'm covering Java/Kotlin and Python3, open a terminal and make sure you can run:
+
+* Java/Kotlin: java -version
+* Python3: python3 --version, or python --version
 
 **IDE**
 
-Free IDEs for Java
-* Eclipse IDE for Java Developers or Eclipse IDE for Enterprise Java Developers: https://www.eclipse.org/downloads/packages/
-* IntelliJ Community: https://www.jetbrains.com/idea/download/
-
-Free IDEs for Python
-* PyCharm Community: https://www.jetbrains.com/pycharm/download/
+Free IDEs
+* (**Java**) Eclipse IDE for Java Developers or Eclipse IDE for Enterprise Java Developers: https://www.eclipse.org/downloads/packages/
+* (**Java/Kotlin**) IntelliJ Community: https://www.jetbrains.com/idea/download/
+* (**Python**) PyCharm Community: https://www.jetbrains.com/pycharm/download/
 
 **Simple Examples**
 
-Clone or download this very repo, it contains project examples in different languages, ready to enable you to start with a simple example class and unit test.
+Clone or download this very repo, it contains empty projects with basic runable test examples.
 
 * Using Git: git clone https://github.com/franferri/your-codingdojos-katas.git
-* Direct download: https://github.com/franferri/your-codingdojos-katas/archive/master.zip
+* Direct zip download: [Zip file](../archive/master.zip)
 
 **Open the code in your IDE**
 
-If you are using an IDE load the project folder located inside "your-codingdojos-katas" that you just cloned/downloaded.
+If you are using an IDE, **dont' load the base folder of the repo**, but instead the inner project folders, like the following examples.
 
 Java
-* In Eclipse use File->Import->Existent Maven Project, then select the folder "your-kata-project-using-java" for example
+* In Eclipse use File->Import->Existent Maven Project, then select the folder "example-kata-using-java" for example
 
 Java and/or Kotlin
-* In IntelliJ, just open the folder: "your-kata-project-using-java" or "your-kata-project-using-kotlin-and-java"
+* In IntelliJ, just open the folder: "example-kata-using-java" or "example-kata-using-java-and-kotlin"
 
 Python
-* In PyCharm, just open the folder: "your-kata-project-using-python"
+* In PyCharm, just open the folder: "example-kata-using-python"
 * Open settings, Project interpreter, Add new, Mark Inherid global site-packages, and save
 * Edit run configurations, Working Dir, remove the ending "/tests" save and Run.
 
 ### Run the example tests
 
-The **Java** and **Kotlin** example projects use maven, and maven is buildin in the examples, you don't need any maven installed in your computer. You can run the tests with the following commands
+The **Java** and **Kotlin** example projects use maven, maven is just handling configurations and dependencies for us, don't worrie about it for now. Maven binary is build in in the examples, you don't need to install anything.
 
-    $ cd your-kata-project-using-java
+You can run the tests with the following commands
+
+    $ cd thisrepofolder
     $ ./mvnw clean test
 
-The Python project is Python 3, to run the tests from the console you just need to follow: https://github.com/franferri/your-codingdojos-katas/tree/master/your-kata-project-using-python3
+The **Python** example project uses Python 3, the instructions to run the tests from the console are in the README.md file in the project folder: [Click here to open](../tree/master/your-kata-project-using-python3)
 
-### Creating your first test (suggested convention)
+### The most important part of a Kata is to Enjoy!
 
-![Test in 5 steps](https://github.com/franferri/your-codingdojos-katas/blob/master/images/test_in_5_steps.jpg)
+Time to explore the tests folder in the sample project. Get familiar with the folders structure.
 
-Suggested reading: https://codurance.com/2014/12/13/naming-test-classes-and-methods/
+### What is a test?
 
-### Follow the rules, use TDD
+A test is a mini program that will run parts of your main program. As simple as that.
+
+Tests give you certainty about the main program behaviour, so you can be sure that it behaves as expected.
+
+Using tests developer teams can fix issues before deploying code to production.
+
+### Writing first test
+
+Sandro Mancuso has described a convention that I found really simple to understand and may help you to start: [Naming Test Classes and Methods] https://codurance.com/2014/12/13/naming-test-classes-and-methods/
+
+![Test in 5 steps](../blob/master/images/test_in_5_steps.jpg)
+
+### What is a TDD?
+
+TDD stands for Test Driven Development and it means writing the tests before you develop your main code.
+
+Some Katas will require you to use TDD by design, others will not. As a rule of thumb is good to do TDD always unless stated diferently due the nature of the Kata.
+
+### Use TDD
 * You must write a failing test before you write any production code.
 * You must not write more of a test than is sufficient to fail, or fail to compile.
 * You must not write more production code than is sufficient to make the currently failing test pass.
-* You should follow the circle Red - Green - Refactoring:
+* You should follow the circle: **Red** - **Green** - **Refactoring**:
   * Red - Create a failing test
   * Green - Write enough code to make the test pass
-  * Refactor - Clean up your code and your tests (don't forget that your tests are code too)
+  * Refactor - Rearrange, clean up, rethink... your code and your tests (don't forget that your tests are code too)
 
-![Red Green Refactor](https://github.com/franferri/your-codingdojos-katas/blob/master/images/red_green_refactor.jpg)
+![Red Green Refactor](../blob/master/images/red_green_refactor.jpg)
 
 Suggested reading: http://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html
-
-### And remember, the most important part is to Enjoy!
-
-### If you are trying to organize a Coding Dojo in your company
-
-[Example request for your company](https://github.com/franferri/your-codingdojos-katas/blob/master/Example%20request%20for%20your%20company.md)
