@@ -42,7 +42,7 @@ Java and/or Kotlin
 * In IntelliJ, just open the folder: "example-kata-using-java" or "example-kata-using-java-and-kotlin"
 
 Python
-* In PyCharm, just open the folder: "example-kata-using-python"
+* In PyCharm, just open the folder: "example-kata-using-python3"
 * Open settings, Project interpreter, Add new, Mark Inherid global site-packages, and save
 * Edit run configurations, Working Dir, remove the ending "/tests" save and Run.
 
@@ -55,7 +55,7 @@ You can run the tests with the following commands
     $ cd thisrepofolder
     $ ./mvnw clean test
 
-The **Python** example project uses Python 3, the instructions to run the tests from the console are in the README.md file in the project folder: [Click here to open](your-kata-project-using-python3)
+The **Python** example project uses Python 3, the instructions to run the tests from the console are in the README.md file in the project folder: [Click here to open](example-kata-using-python3)
 
 ### The most important part of a Kata is to Enjoy!
 
