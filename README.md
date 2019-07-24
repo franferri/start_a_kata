@@ -71,13 +71,13 @@ Using tests developer teams can fix issues before deploying code to production.
 
 ### Writing your first test
 
-Sandro Mancuso has described a convention that I found really simple to understand and may help you to start: [Naming Test Classes and Methods] https://codurance.com/2014/12/13/naming-test-classes-and-methods/
+Sandro Mancuso has described a convention that I found really simple to understand and may help you to start: [**Naming Test Classes and Methods**] (https://codurance.com/2014/12/13/naming-test-classes-and-methods/)
 
 ![Test in 5 steps](images/test_in_5_steps.jpg?raw=true)
 
 ### What is a TDD?
 
-TDD stands for Test Driven Development and it means writing the tests before you develop your main code.
+TDD stands for **Test Driven Development** and it means writing the tests before you develop your main code.
 
 Some Katas will require you to use TDD by design, others will not. As a rule of thumb is good to do TDD always unless stated diferently due the nature of the Kata.
 
