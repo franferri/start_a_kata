@@ -16,6 +16,7 @@ In the next lines we are going to:
 Make sure you have your prefered language interpreter or virtual machine installed. For this examples I'm covering Java/Kotlin and Python3, open a terminal and make sure you can run:
 
 * Java/Kotlin: `java -version`
+** You need the JDK, not the JRE
 * Python3: `python3 --version`, or `python --version`
 
 **Free IDEs**
@@ -35,16 +36,11 @@ Clone or download this very repo, it contains empty projects with basic runable 
 
 If you are using an IDE, **dont' load the base folder of the repo**, but instead the inner project folders, like the following examples.
 
-Java
-* In Eclipse use File->Import->Existent Maven Project, then select the folder "example-kata-using-java" for example
-
-Java and/or Kotlin
-* In IntelliJ, just open the folder: "example-kata-using-java" or "example-kata-using-java-and-kotlin"
-
-Python
-* In PyCharm, just open the folder: "example-kata-using-python3"
-* Open settings, Project interpreter, Add new, Mark Inherid global site-packages, and save
-* Edit run configurations, Working Dir, remove the ending "/tests" save and Run.
+* **Eclipse** use File->Import->Existent Maven Project, then select the folder "example-kata-using-java" for example
+* **IntelliJ**, just open the folder: "example-kata-using-java" or "example-kata-using-java-and-kotlin"
+* **PyCharm**, just open the folder: "example-kata-using-python3"
+** Open settings, Project interpreter, Add new, Mark Inherid global site-packages, and save
+** Edit run configurations, Working Dir, remove the ending "/tests" save and Run.
 
 ### Run the example tests
 
