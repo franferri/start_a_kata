@@ -15,8 +15,8 @@ In the next lines we are going to:
 
 Make sure you have your prefered language interpreter or virtual machine installed. For this examples I'm covering Java/Kotlin and Python3, open a terminal and make sure you can run:
 
-* Java/Kotlin: java -version
-* Python3: python3 --version, or python --version
+* Java/Kotlin: `java -version`
+* Python3: `python3 --version`, or `python --version`
 
 **IDE**
 
