@@ -2,7 +2,7 @@
 
 Jump to the parent folder of the project (not the tests one) and run the following command
 
-    $ cd your-kata-project-using-python3
+    $ cd tothisprojectfolder
     $ python3 -m unittest discover
     
 Needs to be run in the parent folder, not inside the tests folder, so it will succeed importing the referenced files
