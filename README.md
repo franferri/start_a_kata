@@ -55,7 +55,7 @@ You can run the tests with the following commands
     $ cd thisrepofolder
     $ ./mvnw clean test
 
-The **Python** example project uses Python 3, the instructions to run the tests from the console are in the README.md file in the project folder: [Click here to open](../tree/master/your-kata-project-using-python3)
+The **Python** example project uses Python 3, the instructions to run the tests from the console are in the README.md file in the project folder: [Click here to open](tree/master/your-kata-project-using-python3)
 
 ### The most important part of a Kata is to Enjoy!
 
