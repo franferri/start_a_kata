@@ -18,12 +18,11 @@ Make sure you have your prefered language interpreter or virtual machine install
 * Java/Kotlin: `java -version`
 * Python3: `python3 --version`, or `python --version`
 
-**IDE**
+**Free IDEs**
 
-Free IDEs
-* (**Java**) Eclipse IDE for Java Developers or Eclipse IDE for Enterprise Java Developers: https://www.eclipse.org/downloads/packages/
-* (**Java/Kotlin**) IntelliJ Community: https://www.jetbrains.com/idea/download/
-* (**Python**) PyCharm Community: https://www.jetbrains.com/pycharm/download/
+* **Java** - Eclipse IDE for Java Developers or Eclipse IDE for Enterprise Java Developers: https://www.eclipse.org/downloads/packages/
+* **Java/Kotlin** - IntelliJ Community: https://www.jetbrains.com/idea/download/
+* **Python** - PyCharm Community: https://www.jetbrains.com/pycharm/download/
 
 **Simple Examples**
 
