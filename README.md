@@ -73,7 +73,7 @@ Using tests developer teams can fix issues before deploying code to production.
 
 Sandro Mancuso has described a convention that I found really simple to understand and may help you to start: [Naming Test Classes and Methods] https://codurance.com/2014/12/13/naming-test-classes-and-methods/
 
-![Test in 5 steps](blob/master/images/test_in_5_steps.jpg?raw=true)
+![Test in 5 steps](images/test_in_5_steps.jpg?raw=true)
 
 ### What is a TDD?
 
@@ -90,6 +90,6 @@ Some Katas will require you to use TDD by design, others will not. As a rule of 
   * Green - Write enough code to make the test pass
   * Refactor - Rearrange, clean up, rethink... your code and your tests (don't forget that your tests are code too)
 
-![Red Green Refactor](../blob/master/images/red_green_refactor.jpg)
+![Red Green Refactor](images/red_green_refactor.jpg)
 
 Suggested reading: http://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html
