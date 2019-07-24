@@ -29,7 +29,7 @@ Make sure you have your prefered language interpreter or virtual machine install
 Clone or download this very repo, it contains empty projects with basic runable test examples.
 
 * Using Git: git clone https://github.com/franferri/your-codingdojos-katas.git
-* Direct zip download: [Zip file](archive/master.zip)
+* Direct zip download: [Zip file](../../archive/master.zip)
 
 **Open the code in your IDE**
 
