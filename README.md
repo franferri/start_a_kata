@@ -69,7 +69,7 @@ Tests give you certainty about the main program behaviour, so you can be sure th
 
 Using tests developer teams can fix issues before deploying code to production.
 
-### Writing first test
+### Writing your first test
 
 Sandro Mancuso has described a convention that I found really simple to understand and may help you to start: [Naming Test Classes and Methods] https://codurance.com/2014/12/13/naming-test-classes-and-methods/
 
