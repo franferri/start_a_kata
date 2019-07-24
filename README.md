@@ -92,4 +92,4 @@ Some Katas will require you to use TDD by design, others will not. As a rule of 
 
 ![Red Green Refactor](images/red_green_refactor.jpg)
 
-Suggested reading: http://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html
+Need more? Robert C. Martin (Uncle Bob) has your back: [The Cycles of TDD](http://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html)
