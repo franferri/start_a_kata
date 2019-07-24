@@ -73,7 +73,7 @@ Using tests developer teams can fix issues before deploying code to production.
 
 Sandro Mancuso has described a convention that I found really simple to understand and may help you to start: [Naming Test Classes and Methods] https://codurance.com/2014/12/13/naming-test-classes-and-methods/
 
-![Test in 5 steps](../blob/master/images/test_in_5_steps.jpg)
+![Test in 5 steps](blob/master/images/test_in_5_steps.jpg?raw=true)
 
 ### What is a TDD?
 
