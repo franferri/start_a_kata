@@ -5,31 +5,32 @@
     <packaging>jar</packaging>
 
     <groupId>codingdojo-kata</groupId>
-    <artifactId>your-kata-project</artifactId>
+    <artifactId>your-kata-name</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <properties>
-        <maven-compiler-plugin-jdk>8</maven-compiler-plugin-jdk>
+        <maven-compiler-plugin-jdk>17</maven-compiler-plugin-jdk>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
-        <mockito-core.version>2.28.2</mockito-core.version>
     </properties>
 
     <dependencies>
+
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.8.2</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
-            <version>${mockito-core.version}</version>
+            <version>4.2.0</version>
             <scope>test</scope>
         </dependency>
+
     </dependencies>
 
     <build>
