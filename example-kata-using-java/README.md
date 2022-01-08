@@ -1,5 +1,4 @@
 
 ## Simple JAVA kickstart project
 
-Using this you can start any kata from scratch quite easy
-
+JUnit 5 user guide: https://junit.org/junit5/docs/current/user-guide/

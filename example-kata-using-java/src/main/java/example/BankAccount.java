@@ -12,4 +12,12 @@ public class BankAccount {
 		balance += deposit;
 	}
 
+	public static void main(String[] args) {
+
+		BankAccount bankAccount = new BankAccount();
+		bankAccount.deposit(10);
+		System.out.println("Your bank account has "+ bankAccount.balance() + " currency");
+
+	}
+
 }
