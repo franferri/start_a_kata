@@ -18,5 +18,5 @@ export MAVEN_OPTS=-Xmx1024m
 ############
 
 cd ..
-mvnw clean package -DskipTests -T 1C;
-mvnw exec:java -Dexec.mainClass="example.BankAccount";
+./mvnw clean package -DskipTests -T 1C;
+./mvnw exec:java -Dexec.mainClass="example.BankAccount";

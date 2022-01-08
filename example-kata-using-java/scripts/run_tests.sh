@@ -15,5 +15,5 @@ cd ..
 
 echo RUNNING TESTS IN PARALLEL, MIND IF THEY HAVE STATE
 
-mvnw test -T 1C
+./mvnw test -T 1C
 
